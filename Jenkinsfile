@@ -5,26 +5,26 @@ pipeline {
 
         stage('Setup Python') {
             steps {
-                sh 'python --version'
+                bat 'python --version'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'pytest'
+                bat 'pytest'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Starting application...'
-                sh 'nohup python app.py &'
+                bat 'nohup python app.py &'
             }
         }
     }
