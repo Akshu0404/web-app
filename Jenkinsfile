@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/your-username/jenkins-python-project.git'
-            }
-        }
-
         stage('Setup Python') {
             steps {
                 sh 'python --version'
